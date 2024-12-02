@@ -18,7 +18,7 @@ public class SortingVisualizer extends JPanel {
         loadArray();
     }
 
-    // Generate random array
+   
     private void randomizeArray() {
         Random rand = new Random();
         for (int i = 0; i < ARR_SIZE; i++) {
@@ -26,13 +26,13 @@ public class SortingVisualizer extends JPanel {
         }
     }
 
-    // Load array from base
+
     private void loadArray() {
         System.arraycopy(baseArr, 0, arr, 0, ARR_SIZE);
         complete = false;
     }
 
-    // Visualization logic
+  
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -54,7 +54,7 @@ public class SortingVisualizer extends JPanel {
         }
     }
 
-    // Sorting Algorithms
+
     public void selectionSort() {
         for (int i = 0; i < ARR_SIZE - 1; i++) {
             int minIndex = i;
@@ -98,14 +98,12 @@ public class SortingVisualizer extends JPanel {
         repaint();
     }
 
-    // Utility function to swap elements
     private void swap(int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    // Delay for visualization
     private void repaintWithDelay() {
         try {
             Thread.sleep(20);
@@ -115,7 +113,7 @@ public class SortingVisualizer extends JPanel {
         repaint();
     }
 
-    // Main UI setup
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Sorting Visualizer");
         SortingVisualizer visualizer = new SortingVisualizer();
@@ -125,7 +123,7 @@ public class SortingVisualizer extends JPanel {
         frame.add(visualizer);
         frame.setVisible(true);
 
-        // Command menu
+
         while (true) {
             String input = JOptionPane.showInputDialog(
                     "Choose Sorting Algorithm:\n" +
